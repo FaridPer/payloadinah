@@ -1,0 +1,131 @@
+@import url('../fuentes.css');
+
+.banner-nosotros{
+    display: flex;
+    flex-direction: column;
+    margin: auto; /* Añadido margen superior para empujar el contenido hacia abajo */
+    height: 200px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+.syp-container {
+    display: flex; /* Activar Flexbox */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    padding-bottom: 20px;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    margin-top: -20px;
+    z-index: 3;
+    padding: 0px 20px;
+    font-family: Geomanist;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px; /* Tamaño del título principal */
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 18px; /* Tamaño de los subtítulos */
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+.info-button-sp {
+    background-color: #691C32; /* Color vino */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px; /* Espacio debajo del botón */
+    text-align: center;
+    display: block;
+    width: fit-content; /* Ajusta el ancho del botón al contenido */
+}
+button:disabled{
+    cursor: default;
+}
+
+
+.content {
+    flex: 1; /* Hacer que el contenido principal ocupe el espacio disponible */
+    padding-right: 20px; /* Espacio a la derecha del contenido */
+}
+
+
+
+.program-details {
+    margin-top: 20px; /* Espacio superior */
+}
+
+.program-link {
+    cursor: pointer; /* Cambiar cursor al pasar sobre el programa */
+    margin: 5px 0; /* Espacio vertical entre programas */
+}
+
+.program-name {
+    color: #691C32;
+    /*Colordetextoparalosnombresdelosprogramas*/font-weight: bold;
+    /*Negrita*/transition: color 0.3s;
+     /* Transición suave */
+    font-weight: normal;
+    font-family: Patria;
+}
+
+.program-link:hover .program-name {
+    color: #d85a16; /* Color más oscuro al pasar el mouse */
+}
+
+.program-info {
+    background-color: #f2f2f2; /* Color de fondo de la información del programa */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    margin-top: 5px; /* Espacio superior */
+    margin-left: 20px; /* Espacio izquierdo */
+}
+.program-info p {
+    text-align: left;
+}
+
+
+.program-title {
+    margin-top: 20px; /* Espacio superior */
+}
+
+.program-title {
+    color: #235B4E; /* Color de texto para los nombres de los programas */
+    font-family: Patria;
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s; /* Transición suave */
+}
+
+
+.program-info {
+    background-color: #f2f2f2; /* Color de fondo de la información del programa */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno */
+    margin-top: 5px; /* Espacio superior */
+    margin-left: 20px; /* Espacio izquierdo */
+}
+
+.card-container {
+    margin-top: 30px;
+}
+
+
+@media (max-width:858px) {
+    .syp-container{
+        flex-direction: column;
+    }
+  
+  }

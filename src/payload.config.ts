@@ -38,4 +38,12 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
+  csrf: [
+    'http://localhost:3000',
+    'https://nextinahp.vercel.app'
+  ],
+  cors: [
+    'http://localhost:3000',
+    'https://nextinahp.vercel.app'
+  ]
 })

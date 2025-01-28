@@ -40,10 +40,10 @@ export default buildConfig({
   ],
   csrf: [
     'http://localhost:3000',
-    'https://nextinahp.vercel.app'
+    'https://payloadinah.vercel.app'
   ],
   cors: [
     'http://localhost:3000',
-    'https://nextinahp.vercel.app'
+    'https://payloadinah.vercel.app'
   ]
 })

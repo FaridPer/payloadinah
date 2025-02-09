@@ -130,6 +130,7 @@ export interface PractiasServicio {
     };
     [k: string]: unknown;
   } | null;
+  perfil_educativo_html?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -156,7 +157,7 @@ export interface MuseosZona {
 export interface Pagina {
   id: number;
   titulo_pagina?: string | null;
-  conteindo?: {
+  contenido?: {
     root: {
       type: string;
       children: {
@@ -487,6 +488,7 @@ export interface PractiasServicioSelect<T extends boolean = true> {
   telefono_coord?: T;
   correo_coord?: T;
   perfil_educativo?: T;
+  perfil_educativo_html?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -511,7 +513,7 @@ export interface MuseosZonaSelect<T extends boolean = true> {
  */
 export interface PaginaSelect<T extends boolean = true> {
   titulo_pagina?: T;
-  conteindo?: T;
+  contenido?: T;
   contenido_html?: T;
   updatedAt?: T;
   createdAt?: T;

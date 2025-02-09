@@ -1,5 +1,11 @@
 
 import type { CollectionConfig } from 'payload'
+import {
+  HTMLConverterFeature,
+  lexicalEditor,
+  lexicalHTML,
+  FixedToolbarFeature
+} from '@payloadcms/richtext-lexical'
 
 export const practicas: CollectionConfig = 
 {
@@ -34,7 +40,17 @@ export const practicas: CollectionConfig =
       },
       {
         name: 'perfil_educativo',
-        type: 'richText'
-      }
+        type: 'richText',
+        editor: lexicalEditor({
+          features: ({ defaultFeatures }) => [
+            ...defaultFeatures,
+            FixedToolbarFeature(),
+            // The HTMLConverter Feature is the feature which manages the HTML serializers.
+            // If you do not pass any arguments to it, it will use the default serializers.
+            HTMLConverterFeature({}),
+          ],
+        }),
+      },
+      lexicalHTML('perfil_educativo', { name: 'perfil_educativo_html' }),
     ]
     }

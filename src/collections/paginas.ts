@@ -19,7 +19,7 @@ export const pagina: CollectionConfig =
         type: 'text',
       },
       {
-        name: 'conteindo',
+        name: 'contenido',
         type: 'richText',
         editor: lexicalEditor({
           features: ({ defaultFeatures }) => [

@@ -35,6 +35,7 @@ const Navbar = () => {
           <li><Link href='/nosotros'>NOSOTROS</Link></li>
           <li><Link href='/museos-zonas'>MUSEOS Y ZONAS</Link></li>
           <li><Link href='/noticias'>NOTICIAS</Link></li>
+          <li><link href="/tramites-servicio" /></li>
           <li><Link href='/servicio-practicas'>SERVICIO Y PRÁCTICAS</Link></li>
           <li><Link href='/contacto'>CONTACTO</Link></li>
         </ul>

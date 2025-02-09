@@ -59,9 +59,11 @@ const MuseosZonas = () => {
           {/* Renderizar datos si están disponibles */}
           {myz.map((item, index) => (
             <div key={item.id}>
-              <h2 onClick={() => toggleInfo(index)}>
+              <h3
+              className='toggle-title' 
+              onClick={() => toggleInfo(index)}>
                 {index + 1}. {item.nombre_myz}
-              </h2>
+              </h3>
               {showInfo === index && (
                 <div>
                   {item.imagen_myz && (
@@ -70,7 +72,30 @@ const MuseosZonas = () => {
                       alt={item.nombre_myz}
                     />
                   )}
-                  {/* Otros campos */}
+                  {/* Validación de descripción */}
+                  {item.descripcion_myz && (
+                    <p className='descripcion-myz'>{item.descripcion_myz}</p>
+                  )}
+
+                  {/* Validación de ubicación */}
+                  {item.ubicacion_myz && (
+                    <p><strong>Ubicación:</strong> {item.ubicacion_myz}</p>
+                  )}
+
+                  {/* Validación de teléfono */}
+                  {item.telefono_myz && (
+                    <p><strong>Contacto:</strong> {item.telefono_myz}</p>
+                  )}
+
+                  {/* Validación de costo */}
+                  {item.costo_myz && (
+                    <p><strong>Costo:</strong> {item.costo_myz}</p>
+                  )}
+
+                  {/* Validación de enlace */}
+                  {item.url_myz && (
+                    <p>Conoce más <a target="blank" href={item.url_myz}>aquí</a></p>
+                  )}
                 </div>
               )}
             </div>

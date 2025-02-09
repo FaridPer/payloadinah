@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import './syp.css'; // Archivo de estilos
 import Image from 'next/image';
+import FormComponent from './form.jsx'
 
 const ServicioPracticas = () => {
   const apiurl = '/api/practias-servicio';
@@ -70,8 +71,8 @@ const ServicioPracticas = () => {
                         <strong>Correo electrónico:</strong> {program.correo_coord}<br />
                         <strong>Número de contacto:</strong> {program.telefono_coord}
                       </p>
+                        <strong>Perfil educativo solicitado:</strong> <p dangerouslySetInnerHTML={{ __html: program.perfil_educativo_html }}></p>
                       <p>
-                        <strong>Perfil educativo solicitado:</strong>
                       </p>
                     </div>
                   )}
@@ -95,31 +96,8 @@ const ServicioPracticas = () => {
           </div>
           <br />
           {/* Formulario debajo del texto */}
-          <form className="form-container">
-            <div className="form-group">
-              <label htmlFor="name" className="label-grande">Nombre completo:</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <br />
-            <div className="form-group">
-              <label htmlFor="name" className="label-grande">Correo:</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <br />
-            {/* Nuevos campos en la misma línea */}
-            <div className="form-group-inline">
-              <div className="form-group">
-                <label htmlFor="licenciatura" className="label-grande label-licenciatura">Licenciatura/Universidad:</label>
-                <input type="text" id="licenciatura" name="licenciatura" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="ss-pp" className="label-grande label-ss-pp">SS/PP:</label>
-                <input type="text" id="ss-pp" name="ss-pp" required />
-              </div>
-            </div>
-            {/* Botón de Enviar */}
-            <button type="submit" className="btn-enviar">Enviar</button>
-          </form>
+          <FormComponent></FormComponent>
+          
         </div>
       </div>
       <br />

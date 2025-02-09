@@ -47,7 +47,7 @@ export const practicas: CollectionConfig =
             FixedToolbarFeature(),
             // The HTMLConverter Feature is the feature which manages the HTML serializers.
             // If you do not pass any arguments to it, it will use the default serializers.
-            HTMLConverterFeature({}),
+           
           ],
         }),
       },

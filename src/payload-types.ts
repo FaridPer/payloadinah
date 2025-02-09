@@ -15,6 +15,7 @@ export interface Config {
     media: Media;
     'practias-servicio': PractiasServicio;
     'museos-zona': MuseosZona;
+    pagina: Pagina;
     forms: Form;
     'form-submissions': FormSubmission;
     'payload-locked-documents': PayloadLockedDocument;
@@ -27,6 +28,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     'practias-servicio': PractiasServicioSelect<false> | PractiasServicioSelect<true>;
     'museos-zona': MuseosZonaSelect<false> | MuseosZonaSelect<true>;
+    pagina: PaginaSelect<false> | PaginaSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -144,6 +146,32 @@ export interface MuseosZona {
   telefono_myz?: string | null;
   costo_myz?: string | null;
   url_myz?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pagina".
+ */
+export interface Pagina {
+  id: number;
+  titulo_pagina?: string | null;
+  conteindo?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  contenido_html?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -361,6 +389,10 @@ export interface PayloadLockedDocument {
         value: number | MuseosZona;
       } | null)
     | ({
+        relationTo: 'pagina';
+        value: number | Pagina;
+      } | null)
+    | ({
         relationTo: 'forms';
         value: number | Form;
       } | null)
@@ -470,6 +502,17 @@ export interface MuseosZonaSelect<T extends boolean = true> {
   telefono_myz?: T;
   costo_myz?: T;
   url_myz?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pagina_select".
+ */
+export interface PaginaSelect<T extends boolean = true> {
+  titulo_pagina?: T;
+  conteindo?: T;
+  contenido_html?: T;
   updatedAt?: T;
   createdAt?: T;
 }

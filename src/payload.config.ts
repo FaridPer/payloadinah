@@ -8,6 +8,7 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { baseEditorConfig } from './globaleditor'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -26,7 +27,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, practicas, MyZ, pagina],
-  editor: lexicalEditor(),
+  editor: baseEditorConfig,
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

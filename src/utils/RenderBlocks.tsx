@@ -4,8 +4,8 @@ import type { Page } from '@/payload-types'
 import React, { Fragment } from 'react'
 
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const blockComponents: Record<string, React.FC<any>> = { 
+
+const blockComponents: Record<string, React.FC<any>> = {
   image: ImageServer,
   content: ContentBlockServ
 };
@@ -23,6 +23,8 @@ export const RenderBlocks: React.FC<{
       <Fragment>
         {blocks.map((block, index) => {
           const { blockName, blockType } = block
+          console.log("Blocks received:", blocks);
+
 
 
           if (blockType in blockComponents) {

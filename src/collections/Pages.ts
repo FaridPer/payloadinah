@@ -38,7 +38,6 @@ export const Pages: CollectionConfig = {
             label: 'Banner',
             type: 'upload',
             relationTo: 'media',
-            required: true
         },
         {
             name: 'Title',

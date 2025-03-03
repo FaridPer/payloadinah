@@ -222,7 +222,7 @@ export interface Page {
   name: string;
   description: string;
   slug: string;
-  Banner: number | Media;
+  Banner?: (number | null) | Media;
   Title: string;
   layout?:
     | (

@@ -77,7 +77,8 @@ nav ul li {
 
 /* Estilo de los enlaces */
 nav ul li a {
-    font-family: Patria, sans-serif;
+    font-family: var(--primary-font), sans-serif;
+    text-transform: uppercase;
     text-decoration: none;
     color: #FFFFFF; /* Color base */
     font-size: 15px;

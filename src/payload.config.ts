@@ -14,7 +14,10 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { practicas } from './collections/ppyss'
 import { MyZ } from './collections/myz'
-import { pagina } from './collections/paginas'
+import { Fuentes } from './globals/fuentes'
+import { Pages } from './collections/Pages'
+import { Header } from './globals/header'
+import { Footer } from './globals/footer'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,7 +29,8 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, practicas, MyZ, pagina],
+  collections: [Users, Media, practicas, MyZ, Pages],
+  globals:[Fuentes, Header, Footer],
   editor: baseEditorConfig,
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

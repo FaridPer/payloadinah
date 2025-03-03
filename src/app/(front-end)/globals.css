@@ -1,19 +1,114 @@
-@import url('fuentes.css');
 
 body {
-    font-family: Geomanist;
+    font-family: var(--secondary-font);
     margin: 0;
     padding: 0;
     background-color: #F6F4F3;
     max-height: none;
 }
 h4{
-    font-family: Patria;
+    font-family: var(--primary-font);
 }
 h1{
-    font-family: Patria;
+    font-family: var(--primary-font);
+}
+h2{
+    font-family: var(--primary-font);
+}
+h3{
+    font-family: var(--primary-font);
 }
 
+.banner-secundario{
+    display: flex;
+    flex-direction: column;
+    margin: auto; /* Añadido margen superior para empujar el contenido hacia abajo */
+    height: 200px;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+    
+    
+.page-container h2 {
+      font-family: Patria;
+      margin-top: 20px;
+      color: #8C5252;
+      font-size: 21px;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+}
+.page-container h3{
+      font-family: Patria;
+      margin-top: 20px;
+      color: #8C5252;
+      margin-bottom: 5px;
+}
+    
+.page-container p {
+  text-align: justify;
+  margin-bottom: 15px;
+  color: #404040;
+  font-size: 17px;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+.page-container ul {
+  text-align: justify;
+  margin-bottom: 15px;
+  color: #404040;
+  font-size: 17px;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+  
+.info-button {
+  font-family: Patria;
+  background-color: #691C32; /* Color vino */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Borde redondeado */
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  width: fit-content; /* Ajusta el ancho del botón al contenido */
+  margin-left: -25px;
+}
+.page-container {
+  display: flex; /* Activar Flexbox */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  padding-bottom: 20px;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 30px auto; /* Centrar el contenedor en la página */
+  z-index: 3;
+  padding: 0px 20px;
+  font-family: Geomanist;
+  position: relative;
+}
+.titulo-pag{
+    display: flex; /* Activar Flexbox */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    margin-top: -20px;
+    z-index: 3;
+    padding: 0px 20px;
+    font-family: Geomanist;
+    position: relative;
+}
+.content {
+  flex: 1; /* Hacer que el contenido principal ocupe el espacio disponible */
+  padding-right: 20px; /* Espacio a la derecha del contenido */
+}
+
+button:disabled {
+        cursor: default;
+    }
 .banner {
     display: flex;
     flex-direction: column;
@@ -117,7 +212,6 @@ h1{
     text-align: center;
     font-size: 20px;
     font-weight: lighter;
-    font-family: Patria;
 }
 
 .carousel {
@@ -206,7 +300,7 @@ h1{
 
 /* Botones para los títulos arriba de las tarjetas */
 .card-title {
-    font-family: Patria;
+    font-family: var(--primary-font);
     font-weight: bold;
     background-color: #691C32; /* Color vino */
     color: white;

@@ -2,7 +2,7 @@
 import React from "react";
 import Carousel from "@/components/carousel";
 import ApiNoticias from "@/modulos/apinoticias";
-import { FaHandshake, FaEye, FaBullseye, FaRegEye } from 'react-icons/fa'; // Importa los iconos
+import { FaHandshake, FaBullseye, FaRegEye } from 'react-icons/fa'; // Importa los iconos
 
 
 export default function Home() {

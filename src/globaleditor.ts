@@ -1,4 +1,4 @@
-import { lexicalEditor, FixedToolbarFeature, HTMLConverterFeature } from '@payloadcms/richtext-lexical'
+import { lexicalEditor, FixedToolbarFeature } from '@payloadcms/richtext-lexical'
 
 export const baseEditorConfig = lexicalEditor({
   features: ({ defaultFeatures }) => [

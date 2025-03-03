@@ -4,8 +4,8 @@ import type { Page } from '@/payload-types'
 import React, { Fragment } from 'react'
 
 
-
-const blockComponents: Record<string, React.FC<any>> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const blockComponents: Record<string, React.FC<any>> = { 
   image: ImageServer,
   content: ContentBlockServ
 };

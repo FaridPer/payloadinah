@@ -1,7 +1,6 @@
 //import { FaBook, FaEye, FaBullseye, FaRegFlag, FaUsers } from 'react-icons/fa'; // Importa los iconos
 import './nosotros.css'; // Se importa el archivo de estilos
 import NewsMod from '@/modulos/NewsMod';
-import Carousel from "@/components/carousel";
 import Image from 'next/image';
 
 const Nosotros = () => {

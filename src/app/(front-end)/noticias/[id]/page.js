@@ -17,7 +17,7 @@ const NoticiaIndividual = async ({ params }) => {
     <div>
       <div className="banner-nosotros">
         <Image
-          src="/Imagenes/Splash/1.jpg"
+          src={imageSrc}
           width={1500}
           height={800}
           className="hidden md:block"

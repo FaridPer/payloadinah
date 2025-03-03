@@ -1,6 +1,5 @@
 
 import "./globals.css";
-import Footer from "@/components/footer";
 import GoogleAnalytics from "../../modulos/analytics";
 import { getFonts } from '@/lib/fonts/fuentes'
 import HeaderServer from '@/blocks/global/Header/Server'

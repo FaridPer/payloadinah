@@ -1,7 +1,11 @@
 const cheerio = require('cheerio');
-
+const cache = new Map();
 
 export async function fetchPosts() {
+  if (cache.has('posts')) {
+    return cache.get('posts');
+  }
+
   const blogToken = process.env.NEXT_PUBLIC_API_TOKEN;
   const blogID = process.env.NEXT_PUBLIC_API_ID;
 
@@ -13,12 +17,14 @@ export async function fetchPosts() {
       throw new Error('Error fetching data');
     }
     const data = await res.json();
+    cache.set('posts', data.items || []);
     return data.items || [];
   } catch (error) {
     console.error('Error fetching posts:', error);
     return [];
   }
 }
+
 
 // Función para obtener una noticia específica por su ID
 export const fetchPostById = async (id) => {

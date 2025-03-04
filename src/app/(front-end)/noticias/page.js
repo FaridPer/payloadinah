@@ -12,9 +12,10 @@ const Noticias = async () => {
       <div className="banner-secundario">
         <Image
           src="/Imagenes/Splash/1.jpg"
-          width={1500}
-          height={800}
-          className="hidden md:block"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }} // optional
           alt="Screenshots of the dashboard project showing desktop version"
         />
       </div>
@@ -27,7 +28,7 @@ const Noticias = async () => {
             return (
               <div key={post.id} className="news-item">
                 <img
-                  src={imageSrc || '/default-news-image.jpg'}
+                  src={imageSrc || ''}
                   alt={post.title || 'Noticia'}
                 />
                 <div className="news-content">

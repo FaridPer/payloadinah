@@ -6,9 +6,14 @@ import NewsMod from '@/modulos/NewsMod';
 
 const MuseosZonas = ({ myz }) => {
   const [showInfo, setShowInfo] = useState(null);
+  const [imageLoading, setImageLoading] = useState({});
 
   const toggleInfo = (index) => {
     setShowInfo(showInfo === index ? null : index);
+  };
+
+  const handleImageLoad = (index) => {
+    setImageLoading((prev) => ({ ...prev, [index]: false }));
   };
 
   return (
@@ -16,9 +21,10 @@ const MuseosZonas = ({ myz }) => {
       <div className="banner-secundario">
         <Image
           src="/Imagenes/Splash/1.jpg"
-          width={1500}
-          height={800}
-          className="hidden md:block"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
           alt="Imagen de museo o zona"
         />
       </div>
@@ -40,11 +46,22 @@ const MuseosZonas = ({ myz }) => {
                 {showInfo === index && (
                   <div className="myz-info">
                     {item.imagen_myz && (
-                      <img
-                        src={item.imagen_myz.url}
-                        alt={item.nombre_myz}
-                        className="img-myz"
-                      />
+                      <div className="image-container">
+                        {imageLoading[index] !== false && (
+                          <img
+                            src="/loading.gif"
+                            alt="Cargando..."
+                            className="loading-icon"
+                          />
+                        )}
+                        <img
+                          src={item.imagen_myz.url}
+                          alt={item.nombre_myz}
+                          className="img-myz"
+                          onLoad={() => handleImageLoad(index)}
+                          style={{ display: imageLoading[index] !== false ? 'none' : 'block' }}
+                        />
+                      </div>
                     )}
                     {item.descripcion_myz && (
                       <p className="descripcion-myz">{item.descripcion_myz}</p>

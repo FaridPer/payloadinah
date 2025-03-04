@@ -1,6 +1,7 @@
 import { Image } from "@/blocks/image/schema";
 import { ContentBlock } from "@/blocks/Content/schema";
 import { CollectionConfig } from "payload";
+import { revalidatePage, revalidateDelete } from "./hooks/revalidatePage";
 
 export const Pages: CollectionConfig = { 
     slug: 'pages',
@@ -55,6 +56,9 @@ export const Pages: CollectionConfig = {
                 Image
             ]
         }
-    ]
-
+    ],
+    hooks: {
+        afterChange: [revalidatePage],
+        afterDelete: [revalidateDelete],
+     },
 }

@@ -1,4 +1,5 @@
 import { GlobalConfig } from "payload";
+import { revalidateHeader } from "./hooks/revalidateHeader";
 
 export const Header: GlobalConfig = {
     slug: 'header',
@@ -34,5 +35,8 @@ export const Header: GlobalConfig = {
             minRows: 1,
             maxRows: 7
         }
-    ]
+    ],
+    hooks: {
+        afterChange: [revalidateHeader],
+    },
 }

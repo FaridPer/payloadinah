@@ -78,7 +78,7 @@ export default async function Page({ params }) {
         <div>
           <div className="banner-secundario">
             <Image
-              src={typeof Banner === 'object' && 'url' in Banner && Banner.url ? Banner.url : ''}
+              src={typeof Banner === 'object' && 'url' in Banner && Banner.url ? Banner.url : '/Imagenes/Splash/1.jpg'}
               alt={typeof Banner === 'object' && 'alt' in Banner && Banner.alt ? Banner.alt : ''}
               width={0}
               height={0}

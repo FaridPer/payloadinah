@@ -32,7 +32,7 @@ h3{
     
     
 .page-container h2 {
-      font-family: Patria;
+      font-family: var(--primary-font), serif;
       margin-top: 20px;
       color: #8C5252;
       font-size: 21px;
@@ -40,7 +40,7 @@ h3{
       margin-bottom: 5px;
 }
 .page-container h3{
-      font-family: Patria;
+      font-family: var(--primary-font),serif;
       margin-top: 20px;
       color: #8C5252;
       margin-bottom: 5px;
@@ -65,7 +65,7 @@ h3{
 }
   
 .info-button {
-  font-family: Patria;
+  font-family: var(--primary-font);
   background-color: #691C32; /* Color vino */
   color: white;
   border: none;
@@ -443,8 +443,11 @@ button:disabled {
         
     }
     .moto{
-        width: 100%;
+        width: 85%;
         font-size: 30px;
+    }
+    .page-container{
+        flex-direction: column;
     }
 
   }

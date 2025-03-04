@@ -23,7 +23,6 @@ export const RenderBlocks: React.FC<{
       <Fragment>
         {blocks.map((block, index) => {
           const { blockName, blockType } = block
-          console.log("Blocks received:", blocks);
 
 
 

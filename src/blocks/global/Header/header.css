@@ -59,6 +59,9 @@ header .logo {
 header .logo img {
     height: 40px; /* Ajusta según el tamaño deseado */
 }
+.logo-img{
+    height: 40px;
+}
 
 /* Lista de navegación general */
 nav ul {

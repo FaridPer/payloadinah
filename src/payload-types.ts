@@ -807,8 +807,8 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Fuente {
   id: number;
-  primaryFont: string;
-  primaryFontFile: number | Media;
+  primaryFont?: string | null;
+  primaryFontFile?: (number | null) | Media;
   secondaryFont?: string | null;
   secondaryFontFile?: (number | null) | Media;
   updatedAt?: string | null;

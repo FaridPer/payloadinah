@@ -13,7 +13,7 @@ const ServicioPracticas = ({ programas }) => {
 
   return (
     <div>
-      <div className="banner-nosotros">
+      <div className="banner-secundario">
         <Image
           src="/Imagenes/Splash/1.jpg"
           width={1500}

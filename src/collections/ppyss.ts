@@ -10,7 +10,7 @@ import { revalidateDeletePracticas, revalidatePracticas } from './hooks/revalida
 
 export const practicas: CollectionConfig = 
 {
-    slug:'practias-servicio',
+    slug:'practicas-servicio',
     admin: {
       useAsTitle: 'nombre_programa'
     },

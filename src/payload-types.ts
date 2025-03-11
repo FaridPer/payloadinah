@@ -68,7 +68,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    'practias-servicio': PractiasServicio;
+    'practicas-servicio': PracticasServicio;
     'museos-zona': MuseosZona;
     pages: Page;
     forms: Form;
@@ -81,7 +81,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    'practias-servicio': PractiasServicioSelect<false> | PractiasServicioSelect<true>;
+    'practicas-servicio': PracticasServicioSelect<false> | PracticasServicioSelect<true>;
     'museos-zona': MuseosZonaSelect<false> | MuseosZonaSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
@@ -168,9 +168,9 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "practias-servicio".
+ * via the `definition` "practicas-servicio".
  */
-export interface PractiasServicio {
+export interface PracticasServicio {
   id: number;
   nombre_programa?: string | null;
   num_programa?: string | null;
@@ -464,8 +464,8 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'practias-servicio';
-        value: number | PractiasServicio;
+        relationTo: 'practicas-servicio';
+        value: number | PracticasServicio;
       } | null)
     | ({
         relationTo: 'museos-zona';
@@ -560,9 +560,9 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "practias-servicio_select".
+ * via the `definition` "practicas-servicio_select".
  */
-export interface PractiasServicioSelect<T extends boolean = true> {
+export interface PracticasServicioSelect<T extends boolean = true> {
   nombre_programa?: T;
   num_programa?: T;
   descripcion_programa?: T;

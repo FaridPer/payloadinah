@@ -2,7 +2,7 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'paylo
 
 import { revalidatePath, revalidateTag } from 'next/cache'
 
-import type { MuseosZona, PractiasServicio } from '@/payload-types'
+import type { MuseosZona, PracticasServicio } from '@/payload-types'
 
 export const revalidateMyZ: CollectionAfterChangeHook<MuseosZona> = ({
     doc,
@@ -36,20 +36,20 @@ export const revalidateDeleteMyZ: CollectionAfterDeleteHook<MuseosZona> = ({ doc
   return doc;
 };
 
-export const revalidatePracticas: CollectionAfterChangeHook<PractiasServicio> = ({
+export const revalidatePracticas: CollectionAfterChangeHook<PracticasServicio> = ({
     doc,
     previousDoc,
     req: { payload, context },
   }) => {
     if (!context.disableRevalidate) {
-      const path = `/practias-servicio/${doc.id}`;
+      const path = `/practicas-servicio/${doc.id}`;
       payload.logger.info(`Revalidando práctica/servicio en la ruta: ${path}`);
   
       revalidatePath(path);
       revalidateTag('practicas-sitemap');
   
       if (previousDoc && previousDoc.id !== doc.id) {
-        const oldPath = `/practias-servicio/${previousDoc.id}`;
+        const oldPath = `/practicas-servicio/${previousDoc.id}`;
         payload.logger.info(`Revalidando ruta anterior: ${oldPath}`);
         revalidatePath(oldPath);
         revalidateTag('practicas-sitemap');
@@ -58,9 +58,9 @@ export const revalidatePracticas: CollectionAfterChangeHook<PractiasServicio> = 
     return doc;
   };
   
-export const revalidateDeletePracticas: CollectionAfterDeleteHook<PractiasServicio> = ({ doc, req: { context } }) => {
+export const revalidateDeletePracticas: CollectionAfterDeleteHook<PracticasServicio> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = `/practias-servicio/${doc.id}`;
+    const path = `/practicas-servicio/${doc.id}`;
     revalidatePath(path);
     revalidateTag('practicas-sitemap');
   }

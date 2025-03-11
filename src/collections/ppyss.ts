@@ -6,6 +6,7 @@ import {
   lexicalHTML,
   FixedToolbarFeature
 } from '@payloadcms/richtext-lexical'
+import { revalidateDeletePracticas, revalidatePracticas } from './hooks/revalidateMyZ'
 
 export const practicas: CollectionConfig = 
 {
@@ -52,5 +53,9 @@ export const practicas: CollectionConfig =
         }),
       },
       lexicalHTML('perfil_educativo', { name: 'perfil_educativo_html' }),
-    ]
+    ],
+    hooks: {
+                afterChange: [revalidatePracticas],
+                afterDelete: [revalidateDeletePracticas],
+             },
     }

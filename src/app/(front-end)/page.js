@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "@/components/carousel";
 import ApiNoticias from "@/modulos/apinoticias";
 import { FaHandshake, FaBullseye, FaRegEye } from 'react-icons/fa'; // Importa los iconos
-
+import MZFront from './museos-principal'
 
 export default function Home() {
   return (
@@ -57,16 +57,7 @@ export default function Home() {
             <div className="explora-cont">
                 <h1>Explora las raíces de Puebla con nosotros</h1>
             </div>
-            <div className="sitsect-cont">
-                <div><p>Descubre la riqueza de nuestra herencia cultural a través de los museos, zonas arqueológicas y galerías que preservan las maravillas de nuestro pasado.</p></div>
-                <div>
-                    <div className="sitsect-box">
-                        <img src={null} alt="" />
-                        <h3>Museo Regional 
-                        de Puebla</h3>
-                    </div>
-                </div>
-            </div>
+            <MZFront/>
         </div>
         <div>
 

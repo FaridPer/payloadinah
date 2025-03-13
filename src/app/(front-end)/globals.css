@@ -183,27 +183,30 @@ button:disabled {
     gap: 20px;
     padding-left: 10px;
 }
-.sitsect-cont div:nth-child(1) {
-    width: 30%; /* Primer elemento */
+.sitsect-cont > div:first-child { 
+    width: 30%; /* Solo afecta al primer hijo (párrafo) */
     font-size: 20px;
 }
 
-.sitsect-cont div:nth-child(2) {
-    width: 70%; /* Segundo elemento */
+.sitsect-cont > div:nth-child(2) { 
+    width: 70%; /* Solo afecta a .sitsect-box-container */
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los hijos conserven su tamaño */
+    gap: 15px; /* Espaciado entre elementos */
 }
 
 .sitsect-box{
     display: flex;
     flex-direction: column;
     padding: 10px;
-    height: 200px
+    height: 200px;
+    width: 220px;
 }
 .sitsect-box img {
     flex: 3; /* La imagen ocupará 3 partes del espacio */
-    width: auto; /* Mantén proporciones */
-    height: auto; /* Permite que se adapte según el ancho */
+    width: 220px; /* Mantén proporciones */
+    height: 150px; /* Permite que se adapte según el ancho */
+    object-fit: cover;
 }
 
 .sitsect-box h3 {
@@ -212,6 +215,12 @@ button:disabled {
     text-align: center;
     font-size: 20px;
     font-weight: lighter;
+}
+.sitsect-box a{
+    color: black;
+}
+.sitsect-box a:visited{
+    color: black;
 }
 
 .carousel {

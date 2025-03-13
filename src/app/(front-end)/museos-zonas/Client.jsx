@@ -1,5 +1,6 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import './myz.css';
 import Image from 'next/image';
 import NewsMod from '@/modulos/NewsMod';
@@ -7,6 +8,17 @@ import NewsMod from '@/modulos/NewsMod';
 const MuseosZonas = ({ myz }) => {
   const [showInfo, setShowInfo] = useState(null);
   const [imageLoading, setImageLoading] = useState({});
+  const searchParams = useSearchParams(); // Obtiene los parámetros de la URL
+
+  useEffect(() => {
+    const idFromUrl = searchParams.get('id'); // Lee el parámetro 'id' de la URL
+    if (idFromUrl) {
+      const index = myz.findIndex(item => item.id.toString() === idFromUrl);
+      if (index !== -1) {
+        setShowInfo(index); // Abre automáticamente la casilla
+      }
+    }
+  }, [myz, searchParams]);
 
   const toggleInfo = (index) => {
     setShowInfo(showInfo === index ? null : index);

@@ -45,7 +45,6 @@ const MuseosZonas = ({ myz }) => {
           <button disabled className="info-button">
             Conoce nuestros sitios resguardados
           </button>
-
           {myz && myz.length > 0 ? (
             myz.map((item, index) => (
               <div key={item.id}>

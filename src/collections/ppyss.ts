@@ -56,7 +56,7 @@ export const practicas: CollectionConfig =
       lexicalHTML('perfil_educativo', { name: 'perfil_educativo_html' }),
     ],
     hooks:{
-      afterChange: [revalidatePracticas],
-      afterDelete: [revalidatePracticasDelete]
+      afterChange: [revalidatePracticas],  // Aquí registras el hook de actualización
+      afterDelete: [revalidatePracticasDelete]  // Y este para la eliminación
     }
     }

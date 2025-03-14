@@ -16,6 +16,7 @@ const getCachedPracticas = unstable_cache(
   ['practicas-servicio'] // Etiqueta para invalidación
 )
 
+
 export default async function ProgramasAPI() {
   const programas = await getCachedPracticas(); // Usa la función cacheada
   return <ServicioPracticas programas={programas} />

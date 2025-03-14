@@ -1,4 +1,3 @@
-import { revalidateTag } from 'next/cache'
 import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'payload'
 import { revalidatePath } from 'next/cache';
 
@@ -7,5 +6,5 @@ export const revalidatePracticas: CollectionAfterChangeHook = async () => {
 };
 
 export const revalidatePracticasDelete: CollectionAfterDeleteHook = async () => {
-  revalidateTag('practicas-servicio')  // Borra la caché cuando se elimina un programa
+  revalidatePath('/servicio-practicas'); // Cambia por la ruta real
 }

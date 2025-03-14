@@ -1,5 +1,6 @@
 
 import type { CollectionConfig } from 'payload'
+import { revalidateMuseos, revalidateMuseosDelete } from './hooks/revalidateMyZ'
 
 export const MyZ: CollectionConfig = 
 {
@@ -38,5 +39,9 @@ export const MyZ: CollectionConfig =
         name: 'url_myz',
         type: 'text'
       }
-    ]
+    ],
+    hooks:{
+      afterChange: [revalidateMuseos],
+      afterDelete: [revalidateMuseosDelete]
+    }
     }

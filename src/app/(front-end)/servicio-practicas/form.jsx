@@ -9,7 +9,7 @@ const FormComponent = () => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm(); // Incluye reset aquí
 
   useEffect(() => {
     const fetchFormConfig = async () => {
@@ -34,7 +34,7 @@ const FormComponent = () => {
       const dataToSend = Object.entries(data).map(([name, value]) => ({ field: name, value }));
       const formID = '1';
 
-      const res = await fetch(`/api/form-submissions`, {
+      const res = await fetch('/api/form-submissions', {  // Corregí la URL de la API aquí
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ form: formID, submissionData: dataToSend }),
@@ -44,11 +44,14 @@ const FormComponent = () => {
 
       const result = await res.json();
       alert('Formulario enviado con éxito');
+      
+      reset(); // Limpiar el formulario después de enviar con éxito
+      
       if (result.redirect) router.push(result.redirect.url);
     } catch (err) {
       alert('Error al enviar el formulario: ' + err.message);
     }
-  }, [router]);
+  }, [router, reset]); // Añadí reset en las dependencias
 
   if (isLoading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -57,16 +60,15 @@ const FormComponent = () => {
     <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
       {formConfig.fields.map((field) => (
         <div
-        className={`form-div ${field.width === 50 ? "half-width" : ""}`} 
-        key={field.name}
-        style={{ width: field.width ? `${field.width}%` : '100%' }}
+          className={`form-div ${field.width === 50 ? "half-width" : ""}`} 
+          key={field.name}
+          style={{ width: field.width ? `${field.width}%` : '100%' }}
         >
           <label className="label-grande">{field.label}</label>
           <input
             type={field.blockType}
             {...register(field.name, { required: field.required })}
             defaultValue={field.defaultValue}
-            
           />
           {errors[field.name] && <p className="error">Este campo es obligatorio</p>}
         </div>

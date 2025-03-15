@@ -7,6 +7,7 @@ const fallbackImage = '/placeholder.png'; // Imagen de respaldo en caso de error
 const Carousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [validImages, setValidImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (images.length === 0) return;
@@ -32,7 +33,11 @@ const Carousel = ({ images }) => {
   };
 
   if (validImages.length === 0) {
-    return <p>No hay imágenes disponibles para mostrar.</p>;
+    return (
+      <div className='carousel'>
+        <img src="/loading.gif" alt="cargando" />
+      </div>
+    );
   }
 
   return (

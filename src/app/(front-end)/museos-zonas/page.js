@@ -1,9 +1,10 @@
 import {MuseosAPI} from './getMuseos'
 import { Suspense } from 'react';
+import FallbackPage from './fallback'
 
 export default function Page() {
   return (
-    <Suspense fallback={<p>Cargando museos y zonas...</p>}>
+    <Suspense fallback={<FallbackPage/>}>
       <MuseosAPI />
     </Suspense>
   );

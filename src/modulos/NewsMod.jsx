@@ -26,7 +26,16 @@ const NewsMod = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Cargando noticias...</p>;
+    return (
+      <div className="news-card-mod">
+        <button disabled className="news-button-mod">
+          <FaNewspaper /> Últimas Noticias
+        </button>
+        <div className="news-container-mod">
+         <p>Cargando noticias</p>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
@@ -38,9 +47,7 @@ const NewsMod = () => {
       <button disabled className="news-button-mod">
         <FaNewspaper /> Últimas Noticias
       </button>
-      <div>
         {posts.length > 0 ? (
-          <div>
             <div className="news-container-mod">
               {posts.map((post) => {
                 const imageSrc = extractImageFromContent(post.content); // Extraer imagen
@@ -63,11 +70,9 @@ const NewsMod = () => {
                 );
               })}
             </div>
-          </div>
         ) : (
           <p>No hay publicaciones disponibles.</p>
-        )}
-      </div>
+        )}  
     </div>
   );
 };

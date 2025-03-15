@@ -6,7 +6,7 @@ export default async function MZFront() {
   const payload = await getPayload({ config });
   const data = await payload.find({ 
     collection: 'museos-zona',
-    limit: 5, 
+    limit: 4, 
     sort: 'id', 
   });
   const myz = data.docs.slice(1, 4); // Solo mostramos 3 de los primeros 10

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchPosts, extractImageFromContent, extractTextFromContent } from '@/app/(front-end)/noticiasposts';
 import '@/modulos/newsmod.css';
 import style from './apinoticias.module.css';
-import { FaNewspaper } from 'react-icons/fa';
+
 
 const ApiNoticias = () => {
   const [posts, setPosts] = useState([]);

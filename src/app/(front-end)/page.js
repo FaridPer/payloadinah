@@ -1,6 +1,6 @@
 //import styles from "./page.module.css";
 import React from "react";
-import Carousel from "@/components/carousel";
+import { MuseosCarouselAPI } from "./museos-zonas/getMuseos";
 import ApiNoticias from "@/modulos/apinoticias";
 import { FaHandshake, FaBullseye, FaRegEye } from 'react-icons/fa'; // Importa los iconos
 import MZFront from './museos-principal'
@@ -10,7 +10,7 @@ export default function Home() {
     <div>
     <div className="banner">
         
-        <Carousel /> {/* Se usa el componente Carousel */}
+        <MuseosCarouselAPI/>
         <div className="sub-div"></div>
         <div className="frases-container">
             <div className="frases-box">

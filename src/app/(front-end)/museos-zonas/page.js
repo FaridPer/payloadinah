@@ -1,4 +1,4 @@
-import MuseosAPI from './getMuseos'
+import {MuseosAPI} from './getMuseos'
 import { Suspense } from 'react';
 
 export default function Page() {

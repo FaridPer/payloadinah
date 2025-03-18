@@ -33,7 +33,8 @@ export const fetchPostById = async (id) => {
 
   try {
     const res = await fetch(
-      `https://www.googleapis.com/blogger/v3/blogs/${blogID}/posts/${id}?key=${blogToken}`
+      `https://www.googleapis.com/blogger/v3/blogs/${blogID}/posts/${id}?key=${blogToken}`,
+      { next: { revalidate: 60 } } // Se actualiza cada 60 segundos
     );
     if (!res.ok) {
       throw new Error('Error fetching post');

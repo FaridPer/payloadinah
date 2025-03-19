@@ -26,7 +26,7 @@ export default async function HeaderServer() {
           ></Image>
         </div>
         <div className="social-icons" id="iconos">
-          <a href="https://www.facebook.com/share/1A1SN4EnDu/" target="_blank" ><FaFacebookF /></a>
+          <a href="https://www.facebook.com/share/16GPxc3FCi/" target="_blank" ><FaFacebookF /></a>
           <a href="https://x.com/centroinahpue?lang=es" target="_blank"><AiFillTwitterCircle /></a> {/* Twitter (X) */}
           <a href="https://www.instagram.com/centroinahpuebla/" target="_blank"><FaInstagram /></a>
           <a href="https://www.youtube.com/@centroinahpuebla5005" target="_blank"><FaYoutube /></a> {/* YouTube */}

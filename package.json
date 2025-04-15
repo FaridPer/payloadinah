@@ -12,8 +12,7 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
-    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "prepare": "npm rebuild sharp --platform=linux --arch=x64"
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
     "@payloadcms/db-vercel-postgres": "^3.34.0",
@@ -47,5 +46,8 @@
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
+  },
+  "resolutions": {
+    "sharp": "0.30.7"
   }
 }

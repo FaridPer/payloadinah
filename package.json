@@ -13,7 +13,7 @@
     "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "prepare": "pnpm rebuild sharp --platform=linux --arch=x64"
+    "prepare": "npm rebuild sharp --platform=linux --arch=x64"
   },
   "dependencies": {
     "@payloadcms/db-vercel-postgres": "^3.34.0",

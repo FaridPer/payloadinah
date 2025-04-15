@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@payloadcms/db-vercel-postgres": "^3.34.0",
-    "@payloadcms/next": "latest",
-    "@payloadcms/payload-cloud": "latest",
+    "@payloadcms/next": "^3.34.0",
+    "@payloadcms/payload-cloud": "^3.34.0",
     "@payloadcms/plugin-form-builder": "^3.34.0",
     "@payloadcms/richtext-lexical": "^3.34.0",
     "@payloadcms/storage-vercel-blob": "^3.34.0",
@@ -26,8 +26,8 @@
     "cross-env": "^7.0.3",
     "font-awesome": "^4.7.0",
     "graphql": "^16.10.0",
-    "next": "15.1.5",
-    "payload": "latest",
+    "next": "15.3.0",
+    "payload": "^3.34.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-hook-form": "^7.55.0",
@@ -46,8 +46,5 @@
   },
   "engines": {
     "node": "^18.20.2 || >=20.9.0"
-  },
-  "resolutions": {
-    "sharp": "0.30.7"
   }
 }
